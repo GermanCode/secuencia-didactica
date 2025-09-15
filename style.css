@@ -1,3 +1,16 @@
+/* Estilos generales */
+:root {
+    --primary-color: #FF6B6B; /* Rojo coral */
+    --secondary-color: #4ECDC4; /* Turquesa */
+    --accent-color: #FFD700; /* Oro */
+    --background-light: #E0FFFF; /* Azul cielo claro */
+    --background-medium: #ADD8E6; /* Azul claro */
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --card-bg-light: #FFFACD; /* Amarillo claro */
+    --card-bg-medium: #F0E68C; /* Caqui */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,22 +18,27 @@
 }
 
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #FFE4B5 100%);
-    color: #333;
+    font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-medium) 100%);
+    color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* Header */
 header {
-    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-light);
     padding: 30px 20px;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border-bottom: 5px solid #FFD700;
+    border-bottom: 5px solid var(--accent-color);
     position: relative;
     overflow: hidden;
+    border-radius: 0 0 30px 30px;
 }
 
 header::before {
@@ -45,7 +63,7 @@ header::before {
     border-radius: 20px;
     margin-bottom: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 5px solid #FFD700;
+    border: 5px solid var(--accent-color);
     transition: transform 0.3s ease;
 }
 
@@ -76,10 +94,12 @@ header p {
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Main Content */
 main {
     padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
+    flex-grow: 1;
 }
 
 section {
@@ -88,7 +108,7 @@ section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border: 3px solid #FFD700;
+    border: 3px solid var(--accent-color);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -120,11 +140,11 @@ section:hover::before {
 section:hover {
     transform: translateY(-10px);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    border-color: #FF6B6B;
+    border-color: var(--primary-color);
 }
 
 h2 {
-    color: #FF6B6B;
+    color: var(--primary-color);
     font-size: 3em;
     margin-bottom: 25px;
     text-align: center;
@@ -154,13 +174,14 @@ p {
 }
 
 strong {
-    color: #FF6B6B;
+    color: var(--primary-color);
     font-size: 1.1em;
 }
 
+/* Activity Cards */
 .activity-card {
-    background: linear-gradient(135deg, #FFF8DC 0%, #F0E68C 100%);
-    border: 4px solid #FFD700;
+    background: linear-gradient(135deg, var(--card-bg-light) 0%, var(--card-bg-medium) 100%);
+    border: 4px solid var(--accent-color);
     border-radius: 20px;
     padding: 30px;
     margin: 30px 0;
@@ -190,11 +211,11 @@ strong {
 .activity-card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: #FF6B6B;
+    border-color: var(--primary-color);
 }
 
 .activity-card h3 {
-    color: #B8860B;
+    color: #B8860B; /* Dark Goldenrod */
     font-size: 2.2em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -222,7 +243,7 @@ strong {
 }
 
 .activity-card a {
-    color: #4682B4;
+    color: #4682B4; /* Steel Blue */
     text-decoration: none;
     font-weight: bold;
     padding: 12px 25px;
@@ -243,19 +264,21 @@ strong {
 
 .activity-card a:hover {
     background: linear-gradient(135deg, #4682B4 0%, #1E90FF 100%);
-    color: white;
+    color: var(--text-light);
     transform: scale(1.05) translateY(-2px);
     box-shadow: 0 8px 20px rgba(70, 130, 180, 0.4);
 }
 
+/* Footer */
 footer {
-    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-light);
     padding: 25px 0;
     text-align: center;
     margin-top: 50px;
-    border-top: 5px solid #FFD700;
+    border-top: 5px solid var(--accent-color);
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px 30px 0 0;
 }
 
 footer p {
@@ -303,4 +326,25 @@ footer p {
     }
 }
 
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .activity-card h3 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .activity-card a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    header, footer {
+        padding: 20px 10px;
+    }
+}
 
